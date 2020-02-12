@@ -23,5 +23,11 @@ var mostPopularFood = [
 // Write a program that will do the following:
 // Add them to the array in the right position
 // Output them in a tidy top-ten fashion in the console.
-
+mostPopularFood.unshift('bean burritos')
+mostPopularFood[9] = 'buffalo-flavoured cauliflower'
+let i = 1;
+mostPopularFood.forEach(food => {
+    console.log(`#${i} - ${food}`);
+    i++;
+})
 // NO for loops!

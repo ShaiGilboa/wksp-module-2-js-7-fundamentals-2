@@ -9,7 +9,7 @@ const characters = ['Rick', 'Morty', 'Summer', 'Beth', 'Jerry'];
 
 characters.sort();
 
-// outcome?
+// outcome? - sorts based on ASCII code (case sensitive)
 ```
 
 ---
@@ -33,7 +33,7 @@ const numbers = [123, 13, 12, 6, 76, 0, 9];
 
 numbers.sort();
 
-// outcome?
+// outcome? [0, 12, 123, 6, 76, 9]
 ```
 
 ---
@@ -54,7 +54,11 @@ const numbers = [123, 13, 12, 6, 76, 0, 9];
 
 numbers.sort((a, b) => a - b)
 
-// outcome?
+// outcome? - smallest to bigggest
+
+// numbers.sort((a,b) => b - a) - biggest to smallest
+
+// does not work with strings
 ```
 
 ---

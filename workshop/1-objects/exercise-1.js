@@ -15,9 +15,19 @@
 //     petName: 'Mia',
 //     monthOfBirth: 'July'
 // }
-
+let me = {
+    name: {first: 'Shai', last: 'Gilboa'},
+    age: 31, city: 'Montreal', siblings: 2,
+    petName: 'Nanuk', petType: 'dog',
+}
 // A) console.log() your object.
 // B) console.log() a few of the values in the object.
+console.log(me)
+console.log(me.name.first)
+console.log(me.name.last)
+console.log(me.city)
+
+
 
 //-------------------------------------------------
 
@@ -29,6 +39,13 @@
 //     - Occupation
 //     - Date of Birth
 //     - Pets (number of pets, names of pets, etc.)
+
+me.dateOfBirth = '10.02.89';
+me.favActivity = 'relaxing';
+me.school = 'concordia bootcamps';
+me.student = true;
+
+console.log(me);
 
 // HINT: You can just modify the object that you created before.
 
@@ -43,13 +60,22 @@
 //     - Year released
 //     - Rating
 //     - Actors
-
+let aGoodMovie = {
+    stars: ['Anthony LaPaglia', 'Debi Mazar', 'Maxwell Caulfield'],
+    title: 'empire records',
+    director: 'Allan Moyle',
+    yearReleased: 1995,
+    rating: 6.7,
+    genre: ['comedy', 'drama', 'music'],
+    length: 90
+}
 // HINT: Most movies have multiple actors. What data-structure do we use to
 // represent a collection of similar things?
 
-var favoriteMovie = {
+// var favoriteMovie = {
 
-}
+// }
+console.log(aGoodMovie);
 
 
 //-------------------------------------------------
@@ -65,8 +91,8 @@ const person = {
     hometown: "somewhere"
 };
 
-person[age];    // => 26
-person.key;     // => "Alyssa P. Hacker"
+console.log(person.age);    // => 26
+console.log(person[key]);     // => "Alyssa P. Hacker"
 
 
 //-------------------------------------------------
@@ -89,8 +115,10 @@ const alyssa = {
 };
 
 function fullName(person) {
-    // Your code here
-
+    let personFullName = '';
+    let names = Object.keys(person.name);
+    names.forEach(I => personFullName += person.name[I] + " ")
+    return personFullName;
 }
 
 console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
@@ -114,8 +142,10 @@ const rick = {
 };
 
 function betterFullName(person) {
-    // Your code here
-
+    let personFullName = '';
+    let names = Object.keys(person.name);
+    names.forEach(I => personFullName += person.name[I] + " ")
+    return personFullName;
 }
 
 console.log(betterFullName(rick)); // => "Rick Sanchez"

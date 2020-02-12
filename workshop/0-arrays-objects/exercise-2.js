@@ -9,5 +9,13 @@ const earlyBirds = ["Ellen", "Jerry", "Jasmine"];
 
 // Write a program that will do the following:
 // Output them in a tidy list from first to last arrival the console.
+const fullList = [];
+earlyBirds.forEach(person => fullList.push(person));
+lateComers.forEach(person => fullList.push(person));
 
+let i = 1;
+fullList.forEach(person => {
+    console.log(`${i} - ${person}`);
+    i++;
+})
 // NO for loops!
