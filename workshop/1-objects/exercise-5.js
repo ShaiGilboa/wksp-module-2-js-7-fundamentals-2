@@ -7,7 +7,8 @@ const people = [
     {name: {first: "Eva", middle: "Lu", last: "Ator"}, age: 40},
     {name: {first: "Lem", middle: "E.", last: "Tweakit"}, age: 45},
     {name: {first: "Louis", last: "Reasoner"}, age: 21},
-    {name: {first: "Shahan", middle: "Haig", last: "Krakirian"}, age: 21}
+    {name: {first: "Shahan", middle: "Haig", last: "Krakirian"}, age: 21},
+    {name: {first: 'Shai', last: 'Gilboa'}, age: 31, city: 'Montreal', siblings: 2, petName: 'Nanuk', petType: 'dog'}
 ];
 
 // Exercise 5.0
@@ -24,7 +25,10 @@ const people = [
 // Write a function that returns the average age of the `people` array.
 
 function avgAge(peopleArr) {
-    // Yuor code here
+    let sum = 0;
+    peopleArr.forEach(person => sum += person.age);
+    let avg = sum / peopleArr.length
+    return avg;
 }
 
 console.log(`Average age is ${avgAge(people)}.`);
@@ -38,8 +42,17 @@ console.log(`Average age is ${avgAge(people)}.`);
 // an argument, returns an array of their full names (each full name is a string).
 // Can you make use of your `fullName` function here?
 
+function fullName2(person) {
+    let personFullName = '';
+    let names = Object.keys(person.name);
+    names.forEach(I => personFullName += person.name[I] + " ")
+    return personFullName;
+}
+
 function fullName(peopleArr) {
-    // Your code here
+    let fullNames = [];
+    peopleArr.forEach(person => fullNames.push(fullName2(person)));
+    return fullNames;
 
 }
 
@@ -55,7 +68,7 @@ console.log(fullName(people));
 
 function olderPeople(peopleArr, age) {
     // Your code here
-
+    return peopleArr.filter(person => person.age > age);
 }
 
 console.log(olderPeople(people, 26));
